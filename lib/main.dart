@@ -13,9 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Designs',
-      home: const Scaffold(
-        body: InitialPage(),
-      ),
+      initialRoute: 'initial_page',
+      routes: {
+        'initial_page': ( _ ) => const InitialPage()
+      },
+      // home: const Scaffold(
+      //   body: InitialPage(),
+      // ),
       theme: ThemeData.light(),
     );
   }

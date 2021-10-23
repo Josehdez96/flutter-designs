@@ -8,20 +8,19 @@ class InitialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
         child: Column(
           children: const [
             FadeInImage(
               placeholder: AssetImage('assets/loading.gif'),
-              image: NetworkImage('https://i.stack.imgur.com/GNhxO.png')
+              image: NetworkImage('https://fotoarte.com.uy/wp-content/uploads/2019/03/Landscape-fotoarte.jpg')
             ),
             DestinationTitleView(),
             DestinationActionsView(),
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             DestinationDescriptionView(),
-            SizedBox(height: 60)
+            SizedBox(height: 50)
           ],
         ),
       ),
