@@ -3,8 +3,8 @@ import 'package:flutter_designs/ui/views/destination_view/destination_actions_vi
 import 'package:flutter_designs/ui/views/destination_view/destination_description_view.dart';
 import 'package:flutter_designs/ui/views/destination_view/destination_title_view.dart';
 
-class InitialPage extends StatelessWidget {
-  const InitialPage({ Key? key }) : super(key: key);
+class InitialScreen extends StatelessWidget {
+  const InitialScreen({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
