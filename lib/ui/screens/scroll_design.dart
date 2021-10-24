@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class ScrollScreen extends StatelessWidget {
   const ScrollScreen({ Key? key }) : super(key: key);
@@ -7,12 +6,43 @@ class ScrollScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: const [
-          _Background(),
-          _MainContent()
-        ]
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.5, 0.5],
+            colors: [
+              Color(0xff5EE8C5),
+              Color(0xff30BAD6)
+            ]
+          )
+        ),
+        child: PageView(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.vertical,
+          children: const [
+            _Page1(),
+            _Page2()
+          ],
+        ),
       )
+    );
+  }
+}
+
+class _Page1 extends StatelessWidget {
+  const _Page1({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: const [
+        _Background(),
+        _MainContent()
+      ]
     );
   }
 }
@@ -83,6 +113,34 @@ class _InfoText extends StatelessWidget {
         color: Colors.white,
         fontSize: 50,
         fontWeight: FontWeight.w500
+      ),
+    );
+  }
+}
+
+class _Page2 extends StatelessWidget {
+  const _Page2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xff30BAD6),
+      child: Center(
+        child: TextButton(
+          onPressed: () {},
+          child: const Text(
+            'Bienvenido',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 40
+            ),
+          ),
+          style: TextButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+            backgroundColor: const Color(0xff0098FA),
+            shape: const StadiumBorder()
+          ),
+        ),
       ),
     );
   }
