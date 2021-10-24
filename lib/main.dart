@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_designs/ui/screens/home_screen.dart';
 import 'package:flutter_designs/ui/screens/initial_screen.dart';
 import 'package:flutter_designs/ui/screens/scroll_design.dart';
@@ -12,6 +13,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Designs',
